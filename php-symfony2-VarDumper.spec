@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 VarDumper Component
 Name:		php-symfony2-%{package}
-Version:	2.7.3
+Version:	2.7.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/var-dumper/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	fabfef322cf887b6ca4ae552f0ea988b
+# Source0-md5:	7063f378fc07347eadc23e2351c8afaa
 URL:		http://symfony.com/doc/2.7/components/var_dumper/
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
