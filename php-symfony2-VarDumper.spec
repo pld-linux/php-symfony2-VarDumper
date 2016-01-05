@@ -3,15 +3,14 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 VarDumper Component
 Name:		php-symfony2-%{package}
-Version:	2.7.5
+Version:	2.7.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/var-dumper/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	7063f378fc07347eadc23e2351c8afaa
+# Source0-md5:	9dcf889cf9b13bf149d4fa12226df4a5
 URL:		http://symfony.com/doc/2.7/components/var_dumper/
 BuildRequires:	phpab
-BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(gd)
@@ -22,7 +21,7 @@ Requires:	php(mysql)
 Requires:	php(pcre)
 Requires:	php(spl)
 Requires:	php(xml)
-Requires:	php-pear >= 4:1.3.10
+Requires:	php-dirs >= 1.6
 Suggests:	php(symfony_debug)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,10 +49,10 @@ phpab -n -e '*/Tests/*' -o autoloader.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
-cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
-rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Tests
-rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Test
+install -d $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}
+cp -a *.php */ $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Tests
+rm -r $RPM_BUILD_ROOT%{php_data_dir}/Symfony/Component/%{package}/Test
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,11 +60,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG.md LICENSE README.md
-%dir %{php_pear_dir}/Symfony/Component/VarDumper
-%{php_pear_dir}/Symfony/Component/VarDumper/VarDumper.php
-%{php_pear_dir}/Symfony/Component/VarDumper/autoloader.php
-%{php_pear_dir}/Symfony/Component/VarDumper/Caster
-%{php_pear_dir}/Symfony/Component/VarDumper/Cloner
-%{php_pear_dir}/Symfony/Component/VarDumper/Dumper
-%{php_pear_dir}/Symfony/Component/VarDumper/Exception
-%{php_pear_dir}/Symfony/Component/VarDumper/Resources
+%dir %{php_data_dir}/Symfony/Component/VarDumper
+%{php_data_dir}/Symfony/Component/VarDumper/VarDumper.php
+%{php_data_dir}/Symfony/Component/VarDumper/autoloader.php
+%{php_data_dir}/Symfony/Component/VarDumper/Caster
+%{php_data_dir}/Symfony/Component/VarDumper/Cloner
+%{php_data_dir}/Symfony/Component/VarDumper/Dumper
+%{php_data_dir}/Symfony/Component/VarDumper/Exception
+%{php_data_dir}/Symfony/Component/VarDumper/Resources
