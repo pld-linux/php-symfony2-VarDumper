@@ -2,13 +2,13 @@
 %define		php_min_version 5.3.9
 Summary:	Symfony2 VarDumper Component
 Name:		php-symfony2-%{package}
-Version:	2.7.8
+Version:	2.8.52
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/var-dumper/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	9dcf889cf9b13bf149d4fa12226df4a5
-URL:		http://symfony.com/doc/2.7/components/var_dumper/
+# Source0-md5:	2b4e829bf188b23b2fe89c7a65295025
+URL:		https://symfony.com/doc/2.8/components/var_dumper.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
